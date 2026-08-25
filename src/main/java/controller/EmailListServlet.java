@@ -35,12 +35,20 @@ public class EmailListServlet extends HttpServlet  {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
- 
+            String dateOfBirth = request.getParameter("dateOfBirth");
+            String source = request.getParameter("source");
+            String[] announcements = request.getParameterValues("announcements");
+            String contactBy = request.getParameter("contactBy");
+
             User user = new User(firstName, lastName, email);
+            user.setDateOfBirth(dateOfBirth);
+            user.setSource(source);
+            user.setAnnouncements(announcements);
+            user.setContactBy(contactBy);
 //            UserDB.insert(user);
- 
+
             request.setAttribute("user", user);
-            url = "/thanks.jsp";   
+            url = "/thanks.jsp";
         }
  
         getServletContext()

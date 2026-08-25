@@ -2,33 +2,135 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
-/* 
-    Created on : Aug 20, 2026, 2:08:27 PM
+/*
+    Created on : Aug 20, 2026, 2:08:27 PM
     Author     : darond
 */
 
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 11pt;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 0;
+    padding: 2em;
+    background: #f4f4f4;
+    color: #222;
 }
+
+.survey {
+    max-width: 40em;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2em 2.5em;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
 h1 {
     color: teal;
+    font-size: 2.2em;
+    margin: 0 0 0.4em;
 }
+
+h2 {
+    color: teal;
+    font-size: 1.3em;
+    margin: 1.4em 0 0.6em;
+}
+
+p {
+    line-height: 1.4;
+    margin: 0 0 1em;
+}
+
+/* Any stray <br> inside the form is just a leftover line break;
+   fields are already block-level and spaced with margin, so hide it
+   instead of letting it add extra blank gaps. */
+form br {
+    display: none;
+}
+
 label {
-    float: left;
-    width: 6em;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #999;
+    border-radius: 2px;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: 2px solid teal;
+    outline-offset: -1px;
+}
+
+.radio-row,
+.checkbox-list {
     margin-bottom: 0.5em;
 }
-input[type="text"], input[type="email"] {
-    width: 15em;
-    margin-left: 0.5em;
-    margin-bottom: 0.5em;
+
+.radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
 }
-br {
-    clear: both;
+
+.checkbox-list label.inline {
+    display: block;
+    margin-bottom: 0.6em;
 }
+
+label.inline {
+    display: inline-flex;
+    align-items: center;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 0.4em;
+    white-space: nowrap;
+}
+
+label.inline input {
+    margin-right: 0.5em;
+}
+
+.contact-by {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 1em 0 1.5em;
+}
+
+.contact-by .inline-label {
+    margin-bottom: 0;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.contact-by select {
+    padding: 0.3em;
+    font-size: 1em;
+    font-family: inherit;
+}
+
 #submit {
-    margin-left: 0.5em; 
+    padding: 0.4em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
 }
